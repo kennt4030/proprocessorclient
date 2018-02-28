@@ -1,7 +1,6 @@
 {
   "name": "pro-processor2",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "aframe": "^0.7.1",
     "aframe-animation-component": "^4.0.0-beta9",
@@ -24,7 +23,8 @@
     "react-spinners": "^0.2.5",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-beta",
-    "youtube-api-search": "0.0.5"
+    "youtube-api-search": "0.0.5",
+    "react-scripts": "^1.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src/styles --include-path ./node_modules src/ -o src/",
@@ -39,7 +39,6 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "devDependencies": {
-    "react-scripts": "^1.1.0",
     "http-server": "^0.9.0"
   },
   "repository": {
