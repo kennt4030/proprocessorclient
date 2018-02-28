@@ -10,7 +10,7 @@ export default class Colorant extends React.Component {
       event.preventDefault();
       const data = new FormData(event.target);
       
-      fetch('http://localhost:3000/api/form-submit-url', {
+      fetch('http://localhost:3001/api/Colorant', {
         method: 'POST',
         body: data,
       });
@@ -21,7 +21,7 @@ export default class Colorant extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="colorname">Color</label>
           <input id="colorname" name="colorname" type="text" />
-          <button>Send data!</button>
+          <button>Save</button>
         </form>
       );
     }

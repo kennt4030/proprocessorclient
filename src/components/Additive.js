@@ -4,24 +4,42 @@ export default class Additive extends React.Component {
     constructor() {
       super();
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange(event) {
+      this.setState({
+          [event.target.name]: event.target.value
+      })
+  }
   
     handleSubmit(event) {
       event.preventDefault();
-      const data = new FormData(event.target);
-      
-      fetch('http://localhost:3000/api/form-submit-url', {
+      console.log(this.state)
+
+      fetch("http://localhost:3001/api/Additive", {
         method: 'POST',
-        body: data,
-      });
-    }
+        body: JSON.stringify({Additive:this.state}),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+          })
+
+    }).then(
+        (response) => response.json()
+    ).then((data) => {
+        this.props.setToken(data.sessionToken)
+
+    }) 
+    
+    
+  }
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="additive">Additive</label>
-          <input id="additive" name="additive" type="text" />
-          <button>Send data!</button>
+          <input id="additive" onChange={this.handleChange} name="additive" type="text" />
+          <button>Save</button>
         </form>
       );
     }

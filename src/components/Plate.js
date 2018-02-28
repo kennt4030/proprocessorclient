@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Natural extends React.Component {
+export default class Plate extends React.Component {
     constructor() {
       super();
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,7 +10,7 @@ export default class Natural extends React.Component {
       event.preventDefault();
       const data = new FormData(event.target);
       
-      fetch('http://localhost:3001/api/Natural', {
+      fetch('http://localhost:3001/api/Plate', {
         method: 'POST',
         body: data,
       });
@@ -19,8 +19,8 @@ export default class Natural extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="natural">Resin</label>
-          <input id="natural" name="natural" type="text" />
+          <label htmlFor="plate">Plate</label>
+          <input id="plate" name="plate" type="text" />
           <button>Save</button>
         </form>
       );

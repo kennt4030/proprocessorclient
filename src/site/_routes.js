@@ -1,14 +1,17 @@
 import React from 'react';
 import Press from '../components/Press';
 import Tool from '../components/Tool';
+import Plate from '../components/Plate';
 import Natural from '../components/Natural';
 import Colorant from '../components/Colorant';
 import Additive from '../components/Additive';
 import SetupSheet from '../components/SetupSheet';
+// import Login from '../auth/Login';
 // import App from '../App';
 
 
 export const routes = [
+
     {
         path: '/Press',
         exact: true,
@@ -20,6 +23,12 @@ export const routes = [
         exact: true,
         sidebar: () => <div>Tool</div>,
         main: () => <Tool />
+    },
+    {
+        path: '/Plate',
+        exact: true,
+        sidebar: () => <div>Plate</div>,
+        main: () => <Plate />
     },
     {
         path: '/Natural',
@@ -44,5 +53,7 @@ export const routes = [
         exact: true,
         main: () => <SetupSheet />
     },
+
+
 
 ]

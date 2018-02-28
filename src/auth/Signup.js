@@ -52,7 +52,7 @@ class Signup extends Component {
         return (
             <div>
                 <h1>Sign Up</h1>
-                <h6>Lorem ipsum?</h6>
+                {/* <h6>Lorem ipsum?</h6> */}
                 <Form onSubmit={submitHandler} >
                     <FormGroup>
                         <Label for="username">username</Label>

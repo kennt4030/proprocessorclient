@@ -23,7 +23,7 @@ class Login extends Component {
     }
 
     handleSubmit(event) {
-        fetch("http://localhost:3000/api/login", {
+        fetch("http://localhost:3001/api/login", {
             method: 'POST',
             body: JSON.stringify({user:this.state}),
             headers: new Headers({
@@ -32,6 +32,7 @@ class Login extends Component {
         }).then(
             (response) => response.json()
         ).then((data) => {
+            console.log(this.props)
             this.props.setToken(data.sessionToken)
 
         }) 
@@ -39,11 +40,12 @@ class Login extends Component {
     }
 
     render() {
+       
         return (
 
             <div>
                 <h1>Login</h1>
-                <h6>?</h6>
+                {/* <h6>Login</h6>  */}
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
                         <Label for="username">Username</Label>

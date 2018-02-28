@@ -15,6 +15,7 @@ const Auth = (props) => {
                     <Login setToken={props.setToken}/>
                 </Col>
             </Row>
+
         </Container>
     )
 }
