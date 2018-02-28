@@ -4,23 +4,41 @@ export default class Natural extends React.Component {
     constructor() {
       super();
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange(event) {
+      this.setState({
+          [event.target.name]: event.target.value
+      })
+  }
   
     handleSubmit(event) {
       event.preventDefault();
-      const data = new FormData(event.target);
-      
-      fetch('http://localhost:3001/api/Natural', {
+      console.log(this.state)
+
+      fetch("http://localhost:3001/api/Natural", {
         method: 'POST',
-        body: data,
-      });
-    }
+        body: JSON.stringify({Natural:this.state}),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+          })
+
+    }).then(
+        (response) => response.json()
+    ).then((data) => {
+        this.props.setToken(data.sessionToken)
+
+    }) 
+    
+    
+  }
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="natural">Resin</label>
-          <input id="natural" name="natural" type="text" />
+          <label htmlFor="natural">Natural</label>
+          <input id="natural" onChange={this.handleChange} name="natural" type="text" />
           <button>Save</button>
         </form>
       );

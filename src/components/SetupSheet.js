@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Text, Row, Col, Container,  Checkbox, } from 'react-form';
+import { Form, Text, Checkbox, } from 'react-form';
 
 
 

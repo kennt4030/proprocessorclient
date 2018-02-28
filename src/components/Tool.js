@@ -15,8 +15,8 @@ export default class Tool extends React.Component {
   
     handleSubmit(event) {
       event.preventDefault();
-      const data = new FormData(event.target);
-      
+      console.log(this.state)
+
       fetch("http://localhost:3001/api/Tool", {
         method: 'POST',
         body: JSON.stringify({Tool:this.state}),
@@ -30,13 +30,15 @@ export default class Tool extends React.Component {
         this.props.setToken(data.sessionToken)
 
     }) 
-    }
+    
+    
+  }
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="toolname">Tool</label>
-          <input id="toolname" onChange={this.handleChange} name="toolname" type="text" />
+          <label htmlFor="tool">Tool</label>
+          <input id="tool" onChange={this.handleChange} name="tool" type="text" />
           <button>Save</button>
         </form>
       );
