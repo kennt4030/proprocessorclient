@@ -16,20 +16,22 @@ export default class Tool extends React.Component {
     handleSubmit(event) {
       event.preventDefault();
       console.log(this.state)
-
-      fetch("http://localhost:3001/api/Tool", {
-        method: 'POST',
-        body: JSON.stringify({Tool:this.state}),
-        headers: new Headers({
-            'Content-Type': 'application/json'
-          })
-
-    }).then(
-        (response) => response.json()
-    ).then((data) => {
-        this.props.setToken(data.sessionToken)
-
-    }) 
+      // http://localhost:3001/api/Tool
+        // https://proprocessorserver.herokuapp.com
+        fetch("https://proprocessorserver.herokuapp.com", {
+          method: 'POST',
+          body: JSON.stringify({Tool:this.state}),
+          headers: new Headers({
+              'Content-Type': 'application/json', 
+              authorization: this.props.sessionToken
+            })
+  
+      }).then(
+          (response) => response.json()
+      ).then((data) => {
+          // this.props.setToken(data.sessionToken)
+        console.log("yeah",data)
+      }) 
     
     
   }

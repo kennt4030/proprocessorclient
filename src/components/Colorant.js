@@ -17,19 +17,22 @@ export default class Colorant extends React.Component {
       event.preventDefault();
       console.log(this.state)
 
-      fetch("http://localhost:3001/api/Colorant", {
-        method: 'POST',
-        body: JSON.stringify({Colorant:this.state}),
-        headers: new Headers({
-            'Content-Type': 'application/json'
-          })
-
-    }).then(
-        (response) => response.json()
-    ).then((data) => {
-        this.props.setToken(data.sessionToken)
-
-    }) 
+      // http://localhost:3001/api/Colorant
+        // https://proprocessorserver.herokuapp.com
+        fetch("https://proprocessorserver.herokuapp.com", {
+          method: 'POST',
+          body: JSON.stringify({Colorant:this.state}),
+          headers: new Headers({
+              'Content-Type': 'application/json', 
+              authorization: this.props.sessionToken
+            })
+  
+      }).then(
+          (response) => response.json()
+      ).then((data) => {
+          // this.props.setToken(data.sessionToken)
+        console.log("yeah",data)
+      }) 
     
     
   }
@@ -38,7 +41,7 @@ export default class Colorant extends React.Component {
       return (
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="Colorant">Colorant</label>
-          <input id="Colorant" onChange={this.handleChange} name="Colorant" type="text" />
+          <input id="Colorant" onChange={this.handleChange} name="colorant" type="text" />
           <button>Save</button>
         </form>
       );

@@ -16,19 +16,21 @@ export default class Press extends React.Component {
     handleSubmit(event) {
       event.preventDefault();
       console.log(this.state)
-
-      fetch("http://localhost:3001/api/Press", {
+      // http://localhost:3001/api/Press
+      // https://proprocessorserver.herokuapp.com
+      fetch("https://proprocessorserver.herokuapp.com", {
         method: 'POST',
         body: JSON.stringify({Press:this.state}),
         headers: new Headers({
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json', 
+            authorization: this.props.sessionToken
           })
 
     }).then(
         (response) => response.json()
     ).then((data) => {
-        this.props.setToken(data.sessionToken)
-
+        // this.props.setToken(data.sessionToken)
+      console.log("yeah",data)
     }) 
     
     

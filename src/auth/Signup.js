@@ -51,19 +51,19 @@ class Signup extends Component {
         const submitHandler = !this.state.username ? this.validateSignUp : this.handleSubmit
         return (
             <div>
-                <h1>Sign Up</h1>
+                {/* <h1>Sign Up</h1> */}
                 {/* <h6>Lorem ipsum?</h6> */}
                 <Form onSubmit={submitHandler} >
                     <FormGroup>
-                        <Label for="username">username</Label>
-                        <Input id="username" type="text" name="username" placeholder="enter username" onChange={this.handleChange} />
-                        {this.state.errorMessage && <span className="error">user name is required</span>}
+                        {/* <Label for="username">username</Label> */}
+                        {/* <Input id="username" type="text" name="username" placeholder="enter username" onChange={this.handleChange} /> */}
+                        {/* {this.state.errorMessage && <span className="error">user name is required</span>} */}
                     </FormGroup>
                     <FormGroup>
-                        <Label for="password">Password</Label>
-                        <Input id="su_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
+                        {/* <Label for="password">Password</Label> */}
+                        {/* <Input id="su_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} /> */}
                     </FormGroup>
-                    <Button type="submit"> Submit </Button>
+                    {/* <Button type="submit"> Submit </Button> */}
                 </Form>
             </div>
         )
