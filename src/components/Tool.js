@@ -18,7 +18,7 @@ export default class Tool extends React.Component {
       console.log(this.state)
       // http://localhost:3001/api/Tool
         // https://proprocessorserver.herokuapp.com
-        fetch("https://proprocessorserver.herokuapp.com", {
+        fetch("https://proprocessorserver.herokuapp.com/api/Tool", {
           method: 'POST',
           body: JSON.stringify({Tool:this.state}),
           headers: new Headers({

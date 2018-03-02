@@ -100,7 +100,7 @@ export default class FormWithCustomInput extends React.Component {
     console.log(this.state)
     // http://localhost:3001/api/SetupSheet
     // https://proprocessorserver.herokuapp.com
-    fetch("https://proprocessorserver.herokuapp.com", {
+    fetch("https://proprocessorserver.herokuapp.com/api/SetupSheet", {
       method: 'POST',
       body: JSON.stringify({Press:this.state}),
       headers: new Headers({
