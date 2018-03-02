@@ -22,7 +22,7 @@ class Signup extends Component {
     }
 
     handleSubmit(event) {
-        fetch("https://proprocessorserver.herokuapp.com", {
+        fetch("https://proprocessorserver.herokuapp.com/api/user", {
             method: 'POST',
             body: JSON.stringify({user:this.state}),
             headers: new Headers({
