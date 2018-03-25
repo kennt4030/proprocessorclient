@@ -19,7 +19,7 @@ export default class Natural extends React.Component {
 
       // http://localhost:3001/api/Natural
         // https://proprocessorserver.herokuapp.com
-        fetch("https://proprocessorserver.herokuapp.com/api/Natural", {
+        fetch("http://localhost:3001/api/Additive/api/Natural", {
           method: 'POST',
           body: JSON.stringify({Natural:this.state}),
           headers: new Headers({

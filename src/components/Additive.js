@@ -18,7 +18,7 @@ export default class Additive extends React.Component {
       console.log(this.state)
       // http://localhost:3001/api/Additive
         // https://proprocessorserver.herokuapp.com
-        fetch("https://proprocessorserver.herokuapp.com/api/Additive", {
+        fetch("http://localhost:3001/api/Additive/api/Additive", {
           method: 'POST',
           body: JSON.stringify({Additive:this.state}),
           headers: new Headers({

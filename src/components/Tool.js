@@ -12,13 +12,15 @@ export default class Tool extends React.Component {
           [event.target.name]: event.target.value
       })
   }
+
+  
   
     handleSubmit(event) {
       event.preventDefault();
       console.log(this.state)
       // http://localhost:3001/api/Tool
         // https://proprocessorserver.herokuapp.com
-        fetch("https://proprocessorserver.herokuapp.com/api/Tool", {
+        fetch("http://localhost:3001/api/Additive/api/Tool", {
           method: 'POST',
           body: JSON.stringify({Tool:this.state}),
           headers: new Headers({
@@ -36,13 +38,14 @@ export default class Tool extends React.Component {
     
   }
   
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="tool">Tool</label>
-          <input id="tool" onChange={this.handleChange} name="tool" type="text" />
-          <button>Save</button>
-        </form>
-      );
-    }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="tool">Tool</label>
+        <input id="tool" onChange={this.handleChange} name="tool" type="text" />
+        <button>Save</button>
+      </form>
+    );
   }
+}
+

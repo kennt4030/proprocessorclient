@@ -12,10 +12,15 @@ import Natural from './components/Natural';
 import Colorant from './components/Colorant';
 import Additive from './components/Additive';
 import SetupSheet from './components/SetupSheet';
+// import logo from './../logo.svg';
+
 import {
   BrowserRouter as Router,
   Route, Switch
 } from 'react-router-dom';
+
+import { Link } from 'react-router-dom'
+
 
 class App extends Component {
   constructor() {
@@ -105,8 +110,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <img src="./assets/pro-logo.png" className="App-logo" alt="logo" /> */}
-          <SiteBar clickLogout={this.logout}/>
+          <img src="file:///C:/Users/kenny/Downloads/proprocessinglogo.svg" className="App-logo" alt="logo" />
           <h1 className="App-title">Pro Processor</h1>
         </header>
         <p className="App-intro">
@@ -115,7 +119,23 @@ class App extends Component {
         
         <Router>
           <div>
-          <Sidebar />
+          <div className="sidebar">
+        <div className="sidebar-list-styling">
+            <ul className="sidebar-list list-unstyled">
+                <li><Link to="/Press">Press</Link></li>
+                <li><Link to="/Tool">Tool</Link></li>
+                <li><Link to="/Plate">Plate</Link></li>
+                <li><Link to="/Natural">Natural</Link></li>
+                <li><Link to="/Colorant">Colorant</Link></li>
+                <li><Link to="/Additive">Additive</Link></li>
+                <li><Link to="/SetupSheet">SetupSheet</Link></li>
+            </ul>
+            <SiteBar clickLogout={this.logout}/>
+
+        </div>
+    <div className="sidebar-route"></div>
+    </div>
+          {/* <Sidebar /> */}
           {this.protectedViews()}
           </div>
         </Router>

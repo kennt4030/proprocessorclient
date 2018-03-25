@@ -1,4 +1,5 @@
 import React from 'react';
+// import Home from './Home';
 import Press from '../components/Press';
 import Tool from '../components/Tool';
 import Plate from '../components/Plate';
@@ -11,7 +12,12 @@ import SetupSheet from '../components/SetupSheet';
 
 
 export const routes = [
-
+    // {
+    //     path: '/' || '/home',
+    //     exact: true,
+    //     sidebar: () => <div>Home</div>,
+    //     main: () => <Home />
+    //   },
     {
         path: '/Press',
         exact: true,

@@ -23,7 +23,7 @@ class Login extends Component {
     }
 
     handleSubmit(event) {
-        fetch("https://proprocessorserver.herokuapp.com/api/login", {
+        fetch("http://localhost:3001/api/login", {
             method: 'POST',
             body: JSON.stringify({user:this.state}),
             headers: new Headers({

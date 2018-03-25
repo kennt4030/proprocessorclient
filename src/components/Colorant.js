@@ -19,7 +19,7 @@ export default class Colorant extends React.Component {
 
       // http://localhost:3001/api/Colorant
         // https://proprocessorserver.herokuapp.com
-        fetch("https://proprocessorserver.herokuapp.com/api/Colorant", {
+        fetch("http://localhost:3001/api/Additive/api/Colorant", {
           method: 'POST',
           body: JSON.stringify({Colorant:this.state}),
           headers: new Headers({

@@ -100,7 +100,7 @@ export default class FormWithCustomInput extends React.Component {
     console.log(this.state)
     // http://localhost:3001/api/SetupSheet
     // https://proprocessorserver.herokuapp.com
-    fetch("https://proprocessorserver.herokuapp.com/api/SetupSheet", {
+    fetch("http://localhost:3001/api/Additive/api/SetupSheet", {
       method: 'POST',
       body: JSON.stringify({Press:this.state}),
       headers: new Headers({
@@ -186,8 +186,8 @@ export default class FormWithCustomInput extends React.Component {
                         <Text field="breakAwayVelocity" id="breakAwayVelocity" name="breakAwayVelocity"/>
                         <label htmlFor="moldTouch">Mold Touch</label>
                         <Text field="moldTouch" id="moldTouch" name="moldTouch"/>
-                        <label htmlFor="moldProtect">Mold Protect PSI.</label>
                         <br />
+                        <label htmlFor="moldProtect">Mold Protect PSI.</label>
                         <Text field="moldProtect" id="moldProtect" name="moldProtect"/>
                         <label htmlFor="tonnage">Tonnage</label>
                         <Text field="tonnage" id="tonnage" name="tonnage"/>
@@ -310,10 +310,10 @@ export default class FormWithCustomInput extends React.Component {
 
                     <h1>Rack</h1>
 
-                        <label htmlFor="injBeforeTonnage">Injection Before Tonnage</label> 
-                        <Text field="injBeforeTonnage" id="injBeforeTonnage" name="injBeforeTonnage"/>
-                        <label htmlFor="injBeforeTonnage">Injection Before Tonnage Set Point</label> 
-                        <Text field="injBeforeTonnage" id="injBeforeTonnage" name="injBeforeTonnage"/>
+                        <label htmlFor="injBeforeTon">Injection Before Tonnage</label> 
+                        <Text field="injBeforeTon" id="injBeforeTon" name="injBeforeTon"/>
+                        <label htmlFor="iBTSP">Injection Before Tonnage Set Point</label> 
+                        <Text field="iBTSP" id="iBTSP" name="iBTSP"/>
                         {/* Set Point should be dependant on Clamp tonnage. Must be within 50 tons. */}
                         <label htmlFor="rackStartPos">Rack Start Position</label> 
                         <Text field="rackStartPos" id="rackStartPos" name="rackStartPos"/>

@@ -5,7 +5,8 @@ const Sidebar = () => (
 
     <div className="sidebar">
         <div className="sidebar-list-styling">
-            <ul className="sidebar-list list-unstyled">
+        {/* <li><Link to="/Home"></Link></li> */}
+            {/* <ul className="sidebar-list list-unstyled">
                 <li><Link to="/Press">Press</Link></li>
                 <li><Link to="/Tool">Tool</Link></li>
                 <li><Link to="/Plate">Plate</Link></li>
@@ -13,7 +14,7 @@ const Sidebar = () => (
                 <li><Link to="/Colorant">Colorant</Link></li>
                 <li><Link to="/Additive">Additive</Link></li>
                 <li><Link to="/SetupSheet">SetupSheet</Link></li>
-            </ul>
+            </ul> */}
         </div>
     <div className="sidebar-route"></div>
     </div>

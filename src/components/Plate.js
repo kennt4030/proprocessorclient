@@ -18,7 +18,7 @@ export default class Plate extends React.Component {
       console.log(this.state)
       // http://localhost:3001/api/Plate
         // https://proprocessorserver.herokuapp.com
-        fetch("https://proprocessorserver.herokuapp.com/api/Plate", {
+        fetch("http://localhost:3001/api/Additive/api/Plate", {
           method: 'POST',
           body: JSON.stringify({Plate:this.state}),
           headers: new Headers({
