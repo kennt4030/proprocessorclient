@@ -128,7 +128,7 @@ class App extends Component {
                 <li><Link to="/Natural">Natural</Link></li>
                 <li><Link to="/Colorant">Colorant</Link></li>
                 <li><Link to="/Additive">Additive</Link></li>
-                <li><Link to="/SetupSheet">SetupSheet</Link></li>
+                <li><Link to="/SetupSheet">Setup Sheet</Link></li>
             </ul>
             <SiteBar clickLogout={this.logout}/>
 
